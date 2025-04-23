@@ -16,7 +16,7 @@ class MultiROIAnalyzer:
         }
 
         # Initialize camera
-        self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        self.cap = cv2.VideoCapture(2, cv2.CAP_DSHOW)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         
@@ -181,6 +181,10 @@ class MultiROIAnalyzer:
             key = cv2.waitKey(1)
             if key == ord('q'):
                 break
+            elif key == ord('s'):
+                with open("thresholds.pkl", "wb") as f:
+                    pickle.dump(self.thresholds, f)
+                print("Thresholds saved to thresholds.pkl")
 
         self.cap.release()
         cv2.destroyAllWindows()

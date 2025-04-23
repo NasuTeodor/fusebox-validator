@@ -10,7 +10,7 @@ class ROIMaskCreator:
         self.mask_ranges = {i: {"low": [0, 0, 0], "high": [255, 255, 255]} for i in range(1, 9)}
         
         # Initialize camera
-        self.cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        self.cap = cv2.VideoCapture(2, cv2.CAP_DSHOW)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         

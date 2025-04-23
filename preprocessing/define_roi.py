@@ -20,7 +20,7 @@ COLOR_PALETTE = {
 }
 
 # Initialize video capture with higher resolution
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(2, cv2.CAP_DSHOW)
 
 # Set camera resolution to 1280x720 (HD)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
