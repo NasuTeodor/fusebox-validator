@@ -54,12 +54,11 @@ class MultiROIAnalyzer:
         mask_ranges = self.mask_ranges
         rois = self.rois
         thresholds = self.base_valid_count
-        for type in range(1, 9):
-            fusebox_data[type] = {
-                "rois": rois,
-                "mask_ranges": mask_ranges,
-                "thresholds": thresholds
-            }
+        fusebox_data = {
+            "rois": rois,
+            "mask_ranges": mask_ranges,
+            "thresholds": thresholds
+        }
         with open("fusebox.pkl", "wb") as f:
             pickle.dump(fusebox_data, f)
         print("Fusebox data saved!")
